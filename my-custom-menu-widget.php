@@ -1,9 +1,10 @@
 <?php
 /**
- * Plugin Name: My Custom Menu Widget
+ * Plugin Name: Nestead Menu Widget
  * Description: Adds an admin panel to select menus and a custom Elementor widget to display them.
  * Version: 1.0
- * Author: Mehak Singh
+ * Author: Kunal Vashisht's 
+ * Author URI: https://github.com/kunalsharma6419
  */
 
 if ( ! defined( 'ABSPATH' ) ) exit;

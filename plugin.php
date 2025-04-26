@@ -6,8 +6,6 @@
 if (!defined('ABSPATH')) exit;
 
 // Define plugin constants
-define('MCMW_PATH', plugin_dir_path(__FILE__));
-define('MCMW_URL', plugin_dir_url(__FILE__));
 
 // Include WordPress Widget
 require_once MCMW_PATH . 'includes/class-menu-selector.php';
@@ -17,10 +15,10 @@ require_once plugin_dir_path(__FILE__) . 'includes/class-mcmw-walker-nav-menu.ph
 // Admin Menu Page
 add_action('admin_menu', function () {
     add_menu_page(
-        'Menu Selector',
-        'Menu Selector',
+        'Nestead Menu',
+        'Nestead Menu',
         'manage_options',
-        'menu-selector',
+        'nestead-menu',
         'mcmw_menu_selector_page',
         'dashicons-menu',
         100
