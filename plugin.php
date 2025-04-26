@@ -22,19 +22,29 @@ add_action('admin_enqueue_scripts', function() {
 });
 
 
-add_action('elementor/frontend/after_enqueue_styles', function() {
-    wp_register_style('mcmw-widget-style', MCMW_URL . 'assets/css/widget.css');
-});
-
-add_action('elementor/frontend/after_enqueue_scripts', function() {
-    wp_register_script('mcmw-widget-script', MCMW_URL . 'assets/js/widget.js', [], null, true);
+add_action('wp_enqueue_scripts', function () {
+    // Use CDN or your compiled Tailwind build
+    wp_enqueue_style('mcmw-tailwind', 'https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css');
 });
 
 
-add_action('init', function() {
-    // Register Elementor widget
-    if ( did_action( 'elementor/loaded' ) ) {
-        require_once MCMW_PATH . 'includes/class-elementor-widget.php';
-        \Elementor\Plugin::instance()->widgets_manager->register( new \MCMW_Elementor_Menu_Widget() );
-    }
+add_action('wp_enqueue_scripts', function () {
+    wp_enqueue_script('mcmw-hamburger', MCMW_URL . 'assets/js/mcmw-hamburger.js', [], null, true);
 });
+
+
+
+
+add_action('wp_enqueue_scripts', function () {
+    wp_enqueue_style('mcmw-tailwind', 'https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css');
+    wp_enqueue_script('mcmw-hamburger', MCMW_URL . 'assets/js/mcmw-hamburger.js', [], null, true);
+});
+
+
+require_once MCMW_PATH . 'includes/class-mcmw-widget.php';
+
+add_action('widgets_init', function () {
+    register_widget('MCMW_Hamburger_Menu_Widget');
+});
+
+

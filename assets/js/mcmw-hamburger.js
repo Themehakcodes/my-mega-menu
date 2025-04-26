@@ -3,12 +3,12 @@ document.addEventListener('DOMContentLoaded', function () {
     const dropdown = document.getElementById('mcmwDropdown');
 
     if (toggleBtn && dropdown) {
-        toggleBtn.addEventListener('click', function (e) {
-            e.stopPropagation();
+        toggleBtn.addEventListener('click', () => {
             dropdown.classList.toggle('hidden');
         });
 
-        document.addEventListener('click', function (e) {
+        // Optional: Close menu when clicking outside
+        document.addEventListener('click', (e) => {
             if (!toggleBtn.contains(e.target) && !dropdown.contains(e.target)) {
                 dropdown.classList.add('hidden');
             }
