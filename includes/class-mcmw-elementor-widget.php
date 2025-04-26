@@ -80,7 +80,6 @@ class MCMW_Elementor_Hamburger_Menu_Widget extends Widget_Base {
            /* Make the main dropdown menu take full height */
 #mcmwDropdown {
     height: 100vh; 
-    
 }
 
 /* Hamburger styles */

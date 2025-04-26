@@ -5,9 +5,6 @@
 
 if (!defined('ABSPATH')) exit;
 
-// Define plugin constants
-define('MCMW_PATH', plugin_dir_path(__FILE__));
-define('MCMW_URL', plugin_dir_url(__FILE__));
 
 // Include WordPress Widget
 require_once MCMW_PATH . 'includes/class-menu-selector.php';
